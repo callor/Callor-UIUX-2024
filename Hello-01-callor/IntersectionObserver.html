@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="widht=device-width, initial-scale=1.0" />
+    <title>callor.com</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img class="logo-img" src="./imgs/logo.png" alt="다음 로고" />
+        </a>
+      </div>
+      <ul class="topmenu">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">정보수정</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">커뮤니티</a></li>
+      </ul>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">고객지원</a></li>
+        <li><a href="#">비지니스</a></li>
+      </ul>
+    </nav>
+
+    <section class="main">
+      <div class="slide">
+        <img src="./imgs/slide.jpg" alt="갤럭시S9" />
+      </div>
+      <article>
+        <img id="img1" src="./imgs/p1.jpg" alt="갤럭시 스튜디오 위치찾기" />
+      </article>
+      <article>
+        <img src="./imgs/p2.jpg" alt="온라인 체험하기" />
+      </article>
+      <article>
+        <img src="./imgs/p3.jpg" alt="특별보상 혜텍보기" />
+      </article>
+    </section>
+    <footer>
+      <address>광주시 북구 거시기길</address>
+      <p>전화번호 : 062-000-0000 | 팩스번호 062-000-0000 | 사업자등록번호 : 000-00-0000-00</p>
+    </footer>
+  </body>
+  <script>
+    // root 를 생략하면 view port 가  root 가 된다
+    const options = {
+      // root: document.querySelector("section.main"),
+      // rootMargin: "10px",
+      // 0.0 ~ 1.0
+      threshold: 0.3,
+    };
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          console.log(entry.target.src, "show");
+          entry.target.classList.add("show");
+          // entry.target.style.opacity = 1;
+        } else {
+          entry.target.classList.remove("show");
+          console.log(entry.target.src, "hidden");
+          // entry.target.style.opacity = 0;
+        }
+      });
+    };
+    // options에 따라 인스턴스 생성
+    let observer = new IntersectionObserver(callback, options);
+
+    // 타겟 요소 관찰 시작
+    let imgs = document.querySelectorAll("article img");
+    imgs.forEach((img) => {
+      observer.observe(img);
+    });
+    // observer.observe(target);
+  </script>
+</html>
