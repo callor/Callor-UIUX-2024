@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>우리 홈페이지</title>
+<meta name ="viewport" content = "widht=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/myhome.css">
+<link rel="stylesheet" href="../css/form.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../js/myhome.js"></script>
+</head>
+<body>
+	<header>
+		<h2>회원가입</h2>
+	</header>
+	<div class="clear"></div>
+	<nav>
+		<ul>
+			<li><a href="../index.html">홈</a></li>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</nav>
+	<div class="clear"></div>
+	<section id=" h">
+		<article>
+			<!-- label : inline tag 중의 하나 -->
+			<!-- 
+				inline Tag
+				   내부의 글자 너비만큼만 공간을 차지하는 Tag
+				   label, span, a 
+			 -->
+			<label>회원ID</label><input type="text" id="userid" name="userid">
+		</article>
+		<article>
+			<label>비밀번호</label><input type="password" id="password"
+				name="pasword">
+		</article>
+		<article>
+			<label>비밀번호 확인</label><input type="password" id="re_password"
+				name="re_password">
+		</article>
+		<article>
+			<label>이름</label><input type="text" id="username" name="username">
+		</article>
+		<article>
+			<label>생년월일</label><input type="date" id="birth" name="birth">
+		</article>
+
+		<!-- 3.29 -->
+		<article>
+			<label>성별</label> <input type="radio" id="male" name="gender"
+				value="mail">남자 <input type="radio" id="femail"
+				name="gender" value="femail">여자 <input type="radio"
+				id="other" name="gender" value="other">기타
+		</article>
+
+		<article>
+			<label>전화번호</label><input type="tel" id="telno" name="telno">
+		</article>
+		<article>
+			<label>시도</label> 
+			<select name="address">
+				<option value="volvo">광주광역시</option>
+				<option value="saab">담양군</option>
+				<option value="fiat">곡성군</option>
+				<option value="audi">목포시</option>
+				<option value="audi">순천시</option>
+				<option value="audi">여수시</option>
+				<option value="audi">광양시</option>
+			</select>
+		</article>
+		<article id="btn-bar">
+			<button id="join_send" >회원가입(B)</button>
+			<button id="join_clear" >초기화</button>
+			<!-- 
+			<input type="submit" name="go" value="회원가입">
+			-->
+		</article>
+	</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
