@@ -1,15 +1,13 @@
-tex@charset "UTF-8";
+@charset "UTF-8";
 
-
-
-header, footer {
-	background-color: blue; /*배경색*/
-	text-align: center; /* 가운데 정렬 */
-	color: white; /*글자색*/
-	padding: 1em; /* 글자와 박스간의 여백 */
-	margin:0;
+header,
+footer {
+  background-color: blue; /*배경색*/
+  text-align: center; /* 가운데 정렬 */
+  color: white; /*글자색*/
+  padding: 1em; /* 글자와 박스간의 여백 */
+  margin: 0;
 }
-
 
 /*
   em 단위 : 포함된 글자의 크기에 비례해서
@@ -20,47 +18,45 @@ header, footer {
   		10 * (2 * 10) 크기의 px 로 변환 
 */
 nav {
-	background-color: green;
-	/* padding: 10px; */
+  background-color: green;
+  /* padding: 10px; */
 }
 
 nav ul {
-	list-style-type: none; /* 메뉴 앞의 블릿을 없애기 */
-	margin: 0px;
+  list-style-type: none; /* 메뉴 앞의 블릿을 없애기 */
+  margin: 0px;
 }
 
 nav ul li {
-	display: inline-block; /* list를 가로로 배열 */
+  display: inline-block; /* list를 가로로 배열 */
 }
 
 nav ul li a {
-	text-decoration: none; /* a 링크에 밑줄 없애기 */
-	color: white;
-	font-weight: bold; /* 글씨를 두껍게 */
-	
-	display:inline-block; /* a tag를 block tag로 변환 */
-	
-	/* 높이 50px의 박스 중간에 글자가 있도록 위치 */
-	line-height:50px;
-	padding-left:20px;
-	padding-right:20px;
+  text-decoration: none; /* a 링크에 밑줄 없애기 */
+  color: white;
+  font-weight: bold; /* 글씨를 두껍게 */
 
+  display: inline-block; /* a tag를 block tag로 변환 */
+
+  /* 높이 50px의 박스 중간에 글자가 있도록 위치 */
+  line-height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* hover : 마우스가 tag 위에 위치할때 */
 nav ul li a:hover {
-	background-color: gray;
-	color: black;
-	font-weight: bold; /* 글씨를 두껍게 */
+  background-color: gray;
+  color: black;
+  font-weight: bold; /* 글씨를 두껍게 */
 }
 
 section {
-	border: 1px solid blue;
-	
-		padding:3em; /* 29 */
+  border: 1px solid blue;
+
+  padding: 3em; /* 29 */
 }
 
-
-
- 
- .clear { clear : both; }
+.clear {
+  clear: both;
+}
