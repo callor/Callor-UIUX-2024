@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      .slide,
+      .slide2 {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: 3s;
+      }
+      .slide img.show {
+        opacity: 1;
+      }
+      .slide2 {
+        width: 100%;
+        display: flex;
+      }
+      .slide2 img {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main">
+      <article class="slide">
+        <img src="./images/iphone_01.png" alt="티타늄" />
+      </article>
+      <article class="slide">
+        <img src="./images/iphone_02.png" alt="아이폰15" />
+      </article>
+      <article class="slide">
+        <img src="./images/iphone_03.png" alt="watch" />
+      </article>
+      <article class="slide2">
+        <img src="./images/iphone_04.png" alt="watch" />
+        <img src="./images/iphone_05.png" alt="mackbook pro" />
+      </article>
+      <article class="slide2">
+        <img src="./images/iphone_06.png" alt="ipad" />
+        <img src="./images/iphone_07.png" alt="air pot" />
+      </article>
+      <article class="slide2">
+        <img src="./images/iphone_08.png" alt="mackbook air" />
+        <img src="./images/iphone_09.png" alt="watch" />
+      </article>
+      <article class="slide">
+        <img src="./images/iphone_10.png" alt="story" />
+      </article>
+    </section>
+  </body>
+  <script>
+    // root 를 생략하면 view port 가  root 가 된다
+    const options = {
+      // root: document.querySelector("section.main"),
+      // rootMargin: "10px",
+      // 0.0 ~ 1.0
+      threshold: 0.3,
+    };
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          console.log(entry.target.src, "show");
+          entry.target.classList.add("show");
+          // entry.target.style.opacity = 1;
+        } else {
+          entry.target.classList.remove("show");
+          console.log(entry.target.src, "hidden");
+          // entry.target.style.opacity = 0;
+        }
+      });
+    };
+    // options에 따라 인스턴스 생성
+    let observer = new IntersectionObserver(callback, options);
+
+    // 타겟 요소 관찰 시작
+    let imgs = document.querySelectorAll("article img");
+    imgs.forEach((img) => {
+      observer.observe(img);
+    });
+    // observer.observe(target);
+  </script>
+</html>
