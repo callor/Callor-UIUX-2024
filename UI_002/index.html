@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      span {
+        font-style: italic;
+      }
+
+      span.blue {
+        color: blue;
+        font-weight: 600;
+        font-size: 20px;
+        border: 1px solid #aaa;
+        width: 600px;
+        padding: 1rem;
+      }
+
+      span.red {
+        color: red;
+        font-size: 30px;
+        text-decoration: underline;
+        /*
+        inline tag 은 span tag 의 display 속성을
+        inline-block 으로 설정을 하면
+        inline tag 의 성질과 block tag 의 성질을 같이 포함하는
+        tag 가 된다.
+        */
+        display: inline-block;
+        width: 500px;
+        border: 1px solid red;
+      }
+
+      span.none {
+        display: none;
+      }
+      /*
+      p.rem tag 에 마우스가 hover
+      span.none tag 에 display 를 inline 으로 적용하라
+      */
+      p.rem:hover span.none {
+        display: inline;
+      }
+
+      span.visible {
+        /* visibility: hidden; */
+        transition: 0.8s;
+        opacity: 0;
+      }
+
+      p.rem:hover span.visible {
+        /* visibility: visible; */
+        opacity: 1;
+      }
+
+      div.rectagle {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin: 20px auto;
+      }
+      div.rectagle:hover {
+        animation-name: rec_to_circle;
+        animation-duration: 3s;
+      }
+
+      @keyframes rec_to_circle {
+        from {
+          transform: rotate(0deg);
+          transform: translateX(0);
+          border-radius: 50%;
+        }
+        to {
+          transform: rotate(180deg);
+          transform: translateX(100%);
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>나의 홈페이지에 오신 것을 환영합니다</h1>
+    <p>
+      우리나라 <span>대한민국</span>은
+      <strong>아름다운 나라</strong> 입니다.
+    </p>
+    <p class="rem">
+      <strong><q>strong tag</q></strong> 는 어떤 특정한 단어, 짧은
+      문장등을 <span class="blue">강조하고자 할때</span> 사용하는 tag
+      <span class="red">대표적인 inline tag</span> 로 layout에는
+      기본적으로 영향이 없다.
+      <span class="visible">HTML4 이전에는</span> b tag 를 사용했는데
+      <span class="none">지금은 strong tag</span> 를 권장한다
+    </p>
+
+    <div class="rectagle"></div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      div {
+        color: blue;
+        border: 1px solid green;
+        margin: 5px;
+        padding: 10px;
+      }
+
+      /* 
+      현재 문서의 div tag 에 
+      div1 클래스가 부착된 모든 친구들  
+      */
+      .div1 {
+        background-color: yellow;
+      }
+
+      div.div2 {
+        background-image: url("image_01.jpg");
+        background-size: contain;
+      }
+
+      #div_lim {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        transition: 1s;
+      }
+
+      #div_lim:hover {
+        border-radius: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>안녕하세요</h1>
+
+    <div class="div1">홍길동</div>
+    <div class="div1">이몽룡</div>
+    <div class="div1">성춘향</div>
+    <div class="div1">장보고</div>
+    <div class="div1">임꺽정</div>
+
+    <div class="div2">홍길동</div>
+    <div class="div2">이몽룡</div>
+    <div class="div2">성춘향</div>
+    <div class="div2">장보고</div>
+    <div class="div2" id="div_lim">임꺽정</div>
+  </body>
+</html>

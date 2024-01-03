@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>반갑습니다</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      section.login {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      section.login h3,
+      section.login article {
+        width: 50%;
+        margin: 10px auto;
+      }
+
+      section.login h3 {
+        text-align: center;
+      }
+
+      /*
+      label {
+        display: inline-block;
+        width: 30%;
+      }
+      */
+
+      section.login div {
+        display: flex;
+        padding: 5px;
+      }
+
+      label,
+      input {
+        padding: 8px;
+      }
+
+      label {
+        width: 30%;
+        text-align: right;
+        padding-right: 10px;
+        color: blue;
+      }
+
+      input {
+        width: 60%;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        outline: none;
+      }
+
+      input:focus {
+        border: 1px solid green;
+      }
+
+      section.login button {
+        background-color: #6565ef;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 20px;
+      }
+      section.login button:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>나의 홈페이지</h1>
+      <p>내가 처음으로 만드는 홈페이지 2024</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="notice.html">공지사항</a></li>
+        <li><a href="#">자유게시판</a></li>
+        <li><a href="login.html">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+      </ul>
+    </nav>
+    <section class="login">
+      <h3>로그인</h3>
+      <article>
+        <div><label>ID</label><input type="text" /></div>
+        <div><label>PASSWORD</label><input type="text" /></div>
+        <div><label></label><button>로그인</button></div>
+      </article>
+    </section>
+    <footer>
+      <address>CopyRight &copy; callor@callor.com</address>
+    </footer>
+  </body>
+</html>

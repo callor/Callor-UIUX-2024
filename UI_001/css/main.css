@@ -1,0 +1,111 @@
+/* css 파일에 한글 주석이 있을때 깨짐 방지 */
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* view port(실제 보이는 화면)만큼 페이지의 높이 설정 */
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+header {
+  background-image: url("../images/image_01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100%;
+  /*
+    여백, font 크기, width, heigth 등을 지정하는 (크기)단위
+    rem과 em 이라는 단위가 있다.
+    화면의 크기가 다양해지는 상황에서 px, pt 등 고정된 크기를
+    사용하기도 하지만, css2 이상에서 rem과 em 이라는 단위가 생겼다
+    이 단위는 주변의 글자의 크기(font-size)를 기준으로 비례적인 크기를
+    설정한다.
+    rem : root(p tag 의 글자)를 기준으로 배율로 설정하고
+    em : 현재 주변의 글자크기를 기준으로 배율로 설정한다
+  */
+  padding: 1.3rem;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+nav {
+  background-color: #777;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin-left: 10px;
+}
+
+nav li {
+  /* top right, bottom, left */
+  padding: 12px 16px 10px 16px;
+  cursor: pointer;
+  margin: 5px;
+  border-bottom: 3px solid transparent;
+  transition: 0.7s;
+}
+
+nav li:nth-of-type(2) {
+  margin-left: auto;
+}
+
+nav li:hover {
+  border-bottom: 3px solid yellow;
+}
+
+section.img_container {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("../images/bg1.png");
+  /* 바탕그림을 반복하여 채워라 */
+  background-repeat: repeat;
+}
+
+section.img_container article {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+section.img_container img {
+  width: 200px;
+  border-radius: 10px;
+  transition: 0.7s;
+}
+section.img_container img:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+section.img_container figcation {
+  display: inline-block;
+  text-align: center;
+  padding: 3px;
+  color: blue;
+  font-weight: 900;
+  transition: 0.7s;
+}
+
+section.img_container figcation:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+footer {
+  background-color: #777;
+  color: white;
+  text-align: center;
+  padding: 0.9rem;
+}

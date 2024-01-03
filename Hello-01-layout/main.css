@@ -1,0 +1,146 @@
+* {
+  /*
+  Box tag 들을 사용하여 Layout 을 만들때
+  border, margin, padding 등의 값에 의해
+  Layout(특히 width)이 흐트러지는 것을 방지하는 초기화 코드
+  */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+body {
+  height: 100%;
+}
+
+header {
+  background-color: #40ef40;
+  text-align: center;
+  /*
+  화면에 표현되는 단위
+  px : pixel : 점의 크기 단위
+      2px 이라면 화면 가로방향의 
+      전체 pixel 의 개수중 2개 만큼의 크기
+  pt : 글꼴과 관련 단위, 12pt : 종이신문의 본문크기
+  
+  화면에 표현되는 글꼴들은 pt 단위어야 하는데
+  웹 화면에서는 보통 px 로 표현한다.
+  p tag 로 만든 본문은 16px 정도의 크기가 된다
+  px 단위가 화면의 크기나 장치(device)의 크기에 따라 달리 표현된다
+  그러한 것은 디자인을 만들때 많이 고민해야 하는 부분이다
+
+  css2 에서는 rem(em) 이라는 단위를 새로 지정하고
+  p tag 에 표현된 본문의 크기에 비례한 단위로 사용한다
+  padding, margin 에서는 rem 을 권장한다
+  */
+  padding: 1.2rem;
+  /* box 내에 표현되는 text 의 색상 */
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+section {
+  border: 1px solid blue;
+}
+
+article {
+  border: 0.7px solid red;
+  /* 
+  tag 들에 공통으로 margign 을 설정할 경우
+  보통 위아래 tag 들은 값이 플러스(+)되지 않는다
+  실제 article 간의 간격은 6px이 아니고 3px으로 설정된다
+  */
+  margin: 3px;
+  padding: 1rem;
+}
+/*
+다중선택자(multy selector)
+  본문(body) 객체들 중에 class 가 
+  article1 이거나 article2 인 객체가 있으면
+  공통 속성(background-colr)를 지정하라
+  없으면 그냥 무시
+*/
+.article1,
+.article2,
+.article20 {
+  background-color: #ddd;
+  /*
+  HTML Box Model
+  Html 에서 box 를 그리는 tag(대표 div...)는 tag는
+  보여지는 모양과 상관없이 width 는 무조건 100% 이다
+  tag 의 width 값을 줄여서 표현하여도
+  보여지는 크기는 변화되지만, 
+  자신은 100%의 크기를 그대로 유지한다
+  */
+  width: 30%;
+}
+
+.article3,
+.article4 {
+  width: 50%;
+}
+
+.article3 {
+  border: 3px solid blue;
+}
+.article4 {
+  border: 6px solid blue;
+}
+
+div.main {
+  display: flex;
+}
+
+nav {
+  background-color: black;
+  color: yellow;
+}
+
+/*
+nav tag 가 감싸고 있는 ul tag를 selector
+*/
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  transition: 0.7s;
+}
+
+/*
+a tag 는 특성상 
+text-decoration이 underline 이고
+color는 blue 등의 속성이 지정된다
+또한 color 는 부모 tag 의 속성을 상속받지 않는다
+보통 a tag 를 사용할때는 다음의 2가지 속성을 지정한다
+*/
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
+nav 의 li tag 에 마우스가 올려졌을때 실행할 action
+*/
+nav li:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+
+nav li:nth-of-type(4),
+nav li:nth-of-type(5) {
+  margin-left: auto;
+}
+
+footer {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 0.7rem;
+}

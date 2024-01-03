@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <style>
+      /*    */
+      section.main {
+        border: 1px solid blue;
+        width: 50%;
+        margin: 20px auto;
+        text-align: center;
+      }
+      div {
+        border: 1px solid green;
+        width: 30%;
+        margin: 2px auto;
+      }
+      button {
+        width: 100px;
+        margin: 3px;
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+        border-radius: 10px;
+      }
+      button:hover {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+      }
+      button.btn_login {
+        background-color: blue;
+        color: white;
+      }
+      button.btn_join {
+        background-color: green;
+      }
+
+      div:nth-of-type(2) {
+        background-color: blue;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 10px;
+      }
+      div:nth-of-type(2):hover {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- tag -->
+    <section class="main">
+      <div>대한민국</div>
+      <div class="click">클릭하세요</div>
+      <button class="btn_login">로그인</button
+      ><button class="btn_join">회원가입</button>
+    </section>
+  </body>
+  <script>
+    // javaScript 영역
+    const div_click = document.querySelector("div.click");
+    const btn_login = document.querySelector("button.btn_login");
+    const btn_join = document.querySelector("button.btn_join");
+    btn_join.style.color = "yellow";
+
+    // event 핸들러 정의
+    const btn_login_click_handler = () => {
+      alert("로그인 실행");
+    };
+    const btn_join_click_handler = function () {
+      alert("회원가입 실행!!!");
+    };
+    // click event 가 발생하면 (미리)정의된 핸들러의 코드를
+    // 실행해죠
+    btn_join.addEventListener("click", btn_join_click_handler);
+    btn_login.addEventListener("click", btn_login_click_handler);
+
+    const div_click_hander = () => {
+      alert("안녕하세요");
+      alert("반갑습니다");
+      alert("나는 div box 입니다");
+    };
+    const div_click_handler_2 = () => {
+      let sum = 0;
+      for (let i = 0; i < 10; i++) {
+        sum += i + 1;
+      }
+      alert("1 ~ 10 까지 덧셈결과 " + sum);
+    };
+    div_click.addEventListener("click", div_click_hander);
+    div_click.addEventListener("click", div_click_handler_2);
+  </script>
+</html>

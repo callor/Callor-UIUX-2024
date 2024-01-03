@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      div.add {
+        width: 100px;
+        border: 1px solid blue;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div><label>숫자1</label><input id="num1" /></div>
+    <div><label>숫자2</label><input id="num2" /></div>
+    <div class="add">덧셈하기</div>
+  </body>
+  <script>
+    const num1 = document.querySelector("input#num1");
+    const num2 = document.querySelector("input#num2");
+    const btn_add = document.querySelector("div.add");
+    const btn_add_click_handler = () => {
+      const num1_value = Number(num1.value);
+      const num2_value = Number(num2.value);
+      if (num1_value === 0) {
+        alert("숫자 1은 반드시 입력하세요");
+        num1.focus();
+        return false;
+      }
+      if (num1_value > 100) {
+        alert("숫자 1은 100 보다 작게 입력하세요");
+        num1.select();
+        return false;
+      }
+      if (num2_value === 0) {
+        alert("숫자 2는 반드시 입력하세요");
+        num2.focus();
+        return false;
+      }
+
+      alert(num1_value + num2_value);
+    };
+    btn_add.addEventListener("click", btn_add_click_handler);
+  </script>
+</html>
