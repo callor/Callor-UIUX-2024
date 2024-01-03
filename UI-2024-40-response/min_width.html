@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      div {
+        height: 100px;
+        /* background: red !important; */
+        margin: 10px;
+      }
+
+      /* min-width(최소 width)가 500px 이상일때  */
+      @media (min-width: 500px) {
+        div {
+          width: 100%;
+          background-color: green !important;
+        }
+      }
+
+      /* min-width(최소 width)가 1000px 이상일때  */
+      @media (min-width: 1000px) {
+        div {
+          flex: 1 0 490px;
+          background-color: blue !important;
+        }
+      }
+
+      /* min-width(최소 width)가 1400px 이상일때  */
+      @media (min-width: 1400px) {
+        div {
+          width: 100%;
+          background-color: red !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>
