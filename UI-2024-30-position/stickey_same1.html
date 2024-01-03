@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+        position: relative;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      html {
+        box-sizing: border-box;
+        background: #ffd;
+        font-family: "Droid Serif", garamond, serif;
+        font-style: normal;
+        font-size: 1rem;
+      }
+      header {
+        background-size: cover;
+        background-position: top center;
+        height: 40vh;
+        position: sticky;
+        top: 0;
+      }
+      h2 {
+        font-style: italic;
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+        padding-top: 5rem;
+      }
+      h3 {
+        background: rgba(255, 255, 255, 0.8);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        padding: 1rem 0;
+      }
+      div {
+        padding: 2rem;
+        background: #ffd;
+      }
+      p,
+      blockquote {
+        max-width: 45rem;
+        margin: 0 auto 1rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+      blockquote {
+        padding: 1rem;
+        font-style: italic;
+        color: #777;
+      }
+      .uno header {
+        background-image: url(https://4.bp.blogspot.com/-OGSy0-ttar0/UpD8CJxQtjI/AAAAAAAAH3E/b2k5041nSAE/s1600/mult-lab3.jpg);
+      }
+      .dos header {
+        background-image: url(https://2.bp.blogspot.com/-Kd55Z83gyvM/UpD8A6qj6CI/AAAAAAAAH20/eV8YvYCDAvE/s1600/mult-lab1.jpg);
+        z-index: 2;
+      }
+      .tres header {
+        background-image: url(https://2.bp.blogspot.com/-ggbrdAifJsg/UpD8BKbE3qI/AAAAAAAAH24/qJ4tw_dWvZw/s1600/mult-lab2.jpg);
+        z-index: 2;
+      }
+      @font-face {
+        font-family: "Droid Serif";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Droid Serif"), local("DroidSerif"), url(https://fonts.gstatic.com/s/droidserif/v6/0AKsP294HTD-nvJgucYTaIbN6UDyHWBl620a-IRfuBk.woff) format("woff");
+      }
+      @font-face {
+        font-family: "Droid Serif";
+        font-style: italic;
+        font-weight: 400;
+        src: local("Droid Serif Italic"), local("DroidSerif-Italic"), url(https://fonts.gstatic.com/s/droidserif/v6/cj2hUnSRBhwmSPr9kS5899kZXW4sYc4BjuAIFc1SXII.woff) format("woff");
+      }
+      @font-face {
+        font-family: "Droid Serif";
+        font-style: italic;
+        font-weight: 700;
+        src: local("Droid Serif Bold Italic"), local("DroidSerif-BoldItalic"), url(https://fonts.gstatic.com/s/droidserif/v6/c92rD_x0V1LslSFt3-QEpgRV2F9RPTaqyJ4QibDfkzM.woff) format("woff");
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article class="uno">
+        <header>
+          <h2>position: sticky</h2>
+        </header>
+        <div>
+          <p>En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.</p>
+          <p>Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.</p>
+          <h3>Disponible en Firefox</h3>
+          <p>El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino.</p>
+          <p>Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que así ensillaba el rocín como tomaba la podadera.</p>
+        </div>
+      </article>
+      <article class="dos">
+        <header>
+          <h2>position: sticky;</h2>
+        </header>
+        <div>
+          <p>En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.</p>
+          <p>Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.</p>
+          <p>El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino.</p>
+          <p>Es, pues, de saber que este sobredicho hidalgo, los ratos que estaba ocioso, que eran los más del año, se daba a leer libros de caballerías, con tanta afición y gusto, que olvidó casi de todo punto el ejercicio de la caza, y aun la administración de su hacienda.</p>
+
+          <blockquote>
+            La razón de la sinrazón que a mi razón se hace, de tal manera mi razón enflaquece, que con razón me quejo de la vuestra fermosura. Y también cuando leía: ...los altos cielos que de vuestra divinidad divinamente con las estrellas os fortifican, y os hacen merecedora del merecimiento que
+            merece la vuestra grandeza.
+          </blockquote>
+
+          <p>
+            Y llegó a tanto su curiosidad y desatino en esto, que vendió muchas hanegas de tierra de sembradura para comprar libros de caballerías en que leer, y así, llevó a su casa todos cuantos pudo haber dellos; y de todos, ningunos le parecían tan bien como los que compuso el famoso Feliciano
+            de Silva, porque la claridad de su prosa y aquellas entricadas razones suyas le parecían de perlas, y más cuando llegaba a leer aquellos requiebros y cartas de desafíos, donde en muchas partes hallaba escrito.
+          </p>
+        </div>
+      </article>
+      <article class="tres">
+        <header>
+          <h2>position: sticky;</h2>
+        </header>
+        <h3>Disponible en Firefox</h3>
+        <div>
+          <p>En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.</p>
+          <p>Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.</p>
+          <p>El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino.</p>
+
+          <p>Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que así ensillaba el rocín como tomaba la podadera.</p>
+          <p>Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que así ensillaba el rocín como tomaba la podadera.</p>
+          <p>
+            Frisaba la edad de nuestro hidalgo con los cincuenta años; era de complexión recia, seco de carnes, enjuto de rostro, gran madrugador y amigo de la caza. Quieren decir que tenía el sobrenombre de Quijada, o Quesada, que en esto hay alguna diferencia en los autores que deste caso
+            escriben; aunque, por conjeturas verosímiles, se deja entender que se llamaba Quejana.
+          </p>
+          <p>Pero esto importa poco a nuestro cuento; basta que en la narración dél no se salga un punto de la verdad.</p>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

@@ -17,6 +17,10 @@
         height: 100%;
         opacity: 0;
         transition: 3s;
+        /*이미지가 뷰포트의 일정 거리 안으로 들어와야 불러옵니다.*/
+        /* loading: lazy; */
+        /*다른 콘텐츠의 표시 지연을 피하기 위해 이미지를 비동기적으로 디코딩 합니다.*/
+        /* decoding: async;  */
       }
       .slide img.show {
         opacity: 1;
@@ -32,26 +36,24 @@
   </head>
   <body>
     <section class="main">
+      <article class="slide"><img src="./images/iphone_01.png" loading="lazy" decoding="async" alt="티타늄" /></article>
       <article class="slide">
-        <img src="./images/iphone_01.png" alt="티타늄" />
-      </article>
-      <article class="slide">
-        <img src="./images/iphone_02.png" alt="아이폰15" />
+        <img src="./images/iphone_02.png" loading="lazy" decoding="async" alt="아이폰15" />
       </article>
       <article class="slide">
-        <img src="./images/iphone_03.png" alt="watch" />
+        <img src="./images/iphone_03.png" loading="lazy" decoding="async" alt="watch" />
       </article>
       <article class="slide2">
-        <img src="./images/iphone_04.png" alt="watch" />
-        <img src="./images/iphone_05.png" alt="mackbook pro" />
+        <img src="./images/iphone_04.png" loading="lazy" decoding="async" alt="watch" />
+        <img src="./images/iphone_05.png" loading="lazy" decoding="async" alt="mackbook pro" />
       </article>
       <article class="slide2">
-        <img src="./images/iphone_06.png" alt="ipad" />
-        <img src="./images/iphone_07.png" alt="air pot" />
+        <img src="./images/iphone_06.png" loading="lazy" decoding="async" alt="ipad" />
+        <img src="./images/iphone_07.png" loading="lazy" decoding="async" alt="air pot" />
       </article>
       <article class="slide2">
-        <img src="./images/iphone_08.png" alt="mackbook air" />
-        <img src="./images/iphone_09.png" alt="watch" />
+        <img src="./images/iphone_08.png" loading="lazy" decoding="async" alt="mackbook air" />
+        <img src="./images/iphone_09.png" loading="lazy" decoding="async" alt="watch" />
       </article>
       <article class="slide">
         <img src="./images/iphone_10.png" alt="story" />

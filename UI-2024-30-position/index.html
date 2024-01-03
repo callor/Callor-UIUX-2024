@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 200%;
+        line-height: 1.6;
+      }
+      header {
+        position: sticky;
+        padding: 64px 32px 32px 32px;
+        top: -32px;
+
+        background: deeppink;
+        color: white;
+        padding-left: 32px;
+        padding-right: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 1s ease-in-out;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+      }
+
+      li {
+        margin-left: 16px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      main {
+        padding: 32px;
+      }
+
+      main div {
+        height: 100vh;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>나의 홈페이지</h1>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>공지사항</li>
+          <li>자유게시판</li>
+          <li>로그인</li>
+          <li>회원가입</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>
+        이용할 수 있는 <code>position: sticky</code>라고 불리우는 또 다른 위치잡기 값이 있습니다. 이것은 다른 위치잡기보다 다소 새로운 것입니다. 이것은 기본적으로 상대 위치잡기와 고정 위치잡기가 혼합된 하이브리드로서, 위치잡기 요소가 특정 임계점에(예로 뷰포트의 상단으로부터 10px) 스크롤될 때까지
+        상대 위치잡기처럼 행동할 수 있다가 그 뒤에 위치가 고정됩니다. 예를 들어, 탐색 막대가 특정 지점까지 페이지와 함께 스크롤한 다음 페이지 상단에 흡착되도록 사용할 수 있습니다.
+      </p>
+      <pre>
+    .positioned {
+      position: sticky;
+      top: 30px;
+      left: 30px;
+    }  
+    </pre
+      >
+      <p><code>position: sticky</code>의 일반적 사용례기도 하고 흥미로운 사용례는 스크롤링하다 제목에 도달하면 서로 다른 제목이 페이지의 맨 위에 흡착되는 색인 페이지를 만드는 것입니다. 이런 사례에 대한 마크업은 다음과 같은 모습일 수 있습니다:</p>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </main>
+  </body>
+</html>

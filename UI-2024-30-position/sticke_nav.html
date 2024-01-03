@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sticky Element</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .navbar {
+        position: sticky;
+        top: 0;
+        background-color: #32839c;
+      }
+
+      .active a {
+        color: black;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #3991bd">
+    <h1>Welcome To InfoWiki</h1>
+    <br /><br />
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Info-Wiki</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#" style="color: black">Home</a></li>
+          <li><a href="#what" style="color: black">What</a></li>
+          <li><a href="#distance" style="color: black">Distance</a></li>
+          <li><a href="#author" style="color: black">Author</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <br />
+    <br />
+    <h1>Comet Swan</h1>
+    <br />
+    <img src="Comet_Swan.jpg" width="300px" height="300px" />
+    <br /><br /><br />
+    <h1 id="what">What Is Comet Swan??</h1>
+    <br />
+    <p>“Your Text”</p>
+    <h1 id="distance">How Far Is Comet Swan?</h1>
+    <br />
+
+    <p>“Your Text”</p>
+    <br /><br />
+    <h1>How To See Comet Swan?</h1>
+    <br /><br />
+    <p>“Your Text”</p>
+    <br /><br />
+    <h3 id="author">Written By Harish Rajora</h3>
+  </body>
+</html>
