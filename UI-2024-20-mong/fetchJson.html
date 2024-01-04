@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body>
+    <section class="data"></section>
+  </body>
+
+  <script>
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        const status = xhr.status;
+        if (status === 0 || (status >= 200 && status < 400)) {
+          const json = JSON.parse(xhr.responseText);
+          json.forEach((item) => {
+            const div = document.createElement("div");
+            div.innerHTML = `<span>${item.id}</span><span>${item.name}</span>`;
+            document.querySelector("section.data").appendChild(div);
+          });
+          console.log(data);
+        } else {
+          console.error(xhr.responseText);
+        }
+      }
+    };
+    xhr.open("GET", "./data.json", true);
+    xhr.send(null);
+  </script>
+</html>
