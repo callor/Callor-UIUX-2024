@@ -10,6 +10,9 @@
   </body>
 
   <script>
+    /**
+     * XMLHttpRequest() 객체를 사용하여 외부의 json 파일을 가져오기
+     */
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () => {
       if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -21,6 +24,7 @@
             div.innerHTML = `<span>${item.id}</span><span>${item.name}</span>`;
             document.querySelector("section.data").appendChild(div);
           });
+
           console.log(data);
         } else {
           console.error(xhr.responseText);

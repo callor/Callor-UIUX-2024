@@ -1,0 +1,111 @@
+header {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(49, 121, 9, 0.9605568445475638) 22%, rgba(0, 212, 255, 1) 100%);
+  padding: 1.3rem;
+  color: white;
+  text-align: center;
+}
+section.input_div,
+ul.todo_list {
+  width: 50%;
+  margin: 5px auto;
+  border: 5px solid #ddd;
+}
+
+section.input_div {
+  padding: 1.3rem;
+  color: white;
+  text-align: center;
+  display: flex;
+}
+
+ul li {
+  cursor: pointer;
+  padding: 0.9rem;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  display: flex;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #bbb;
+}
+
+ul span.complete {
+  padding: 5px;
+  margin: 0 5px;
+}
+ul span.todo {
+  flex: 1;
+}
+
+ul span.close {
+  padding: 3px;
+}
+
+ul li.checked span.todo {
+  color: #ddd;
+  text-decoration: line-through;
+}
+
+ul li:not(.checked) .complete {
+  visibility: hidden;
+}
+
+/* Style the close button */
+.close {
+  color: blue;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
