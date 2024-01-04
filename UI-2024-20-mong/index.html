@@ -2,10 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -23,7 +20,7 @@
     </nav>
     <section class="img_container">
       <article>
-        <img src="./images/thums/600_0001.jpg" alt="인증사진" />
+        <img src="./images/thums/600_0001.jpg" alt="인증사진" class="img_0001" />
         <figcation>몽이인증</figcation>
       </article>
       <article>
@@ -51,4 +48,49 @@
       <address>CopyRight &copy; callor@callor.com</address>
     </footer>
   </body>
+  <script>
+    const includeHTML = (tag, url) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.onreadystatechange = () => {
+        // In local files, status is 0 upon success in Mozilla Firefox
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          const status = xhr.status;
+          if (status === 0 || (status >= 200 && status < 400)) {
+            tag.innerHTML = xhr.responseText;
+          } else if (xhr.status == 404) {
+            tag.innerHTML = "Page not found.";
+          }
+        }
+      };
+      xhr.send();
+    };
+    const section_container = document.querySelector(".img_container");
+    // const img_0001 = document.querySelector(".img_0001");
+    // const img_0001_click_event = () => {
+    //   includeHTML(section_container, "./01.html");
+    // };
+    // img_0001.addEventListener("click", img_0001_click_event);
+
+    section_container.addEventListener("click", (e) => {
+      if (e.target.tagName !== "IMG") return;
+      const alt_text = e.target.getAttribute("alt");
+
+      let url = "./01.html";
+      if (alt_text === "인증사진") {
+        url = "./01.html";
+      } else if (alt_text === "스피츠") {
+        url = "./02.html";
+      } else if (alt_text === "바라보기") {
+        url = "./03.html";
+      } else if (alt_text === "눈치보기") {
+        url = "./04.html";
+      } else if (alt_text === "놀아죠") {
+        url = "./05.html";
+      } else if (alt_text === "첫 만남") {
+        url = "./06.html";
+      }
+      includeHTML(section_container, url);
+    });
+  </script>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flex</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-weight: 600;
+      }
+
+      .container {
+        display: flex;
+        background: #f9f1f0;
+        border: 2px solid black;
+        width: 90vw;
+        height: 200px;
+      }
+
+      .box {
+        background-color: pink;
+        border: 2px solid black;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 100px;
+      }
+      .box:nth-of-type(1) {
+        /*
+        box1의 flex-grow는 1이고, 
+        flex-shrink는 1이고, 
+        flex-basis는 200px이다.
+        */
+        /*
+         flex-shrink: 0;을 적용한 결과 
+         flex Container 크기가 줄어도 
+         box1의 크기는 줄어들지 않은다
+         */
+        flex: 1 1 200px;
+      }
+      .box:nth-of-type(2) {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">box1</div>
+      <div class="box">box2</div>
+      <div class="box">box3</div>
+      <div class="box">box4</div>
+      <div class="box">box5</div>
+      <div class="box">box6</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section.detail {
+        display: flex;
+        flex-direction: column;
+      }
+      /*
+      인접 선택자(선택자와 선택의 관계 설정)
+      parents 와 child 의 관계 빈칸(space), greate than(>)
+      space : 선택자1 선택자2 {} 형식으로 사용
+        선택자1이 parents 포함하는 모든 요소, 자식 손자 요소 포함
+      > : 선택자1 > 선택자2 {} 형식으로 사용
+        선택자1이 parents 로 포함하는 단계 자식요소만 포함
+      */
+      section.detail > div {
+        border: 1px solid blue;
+        margin: 3px;
+      }
+      /*
+      순서 선택자
+      index 요소를 기준으로 선택을 할때
+      선행선택자:nth-child() 는 child 로 포함하는 모든 tag 를 개수로 포함한다
+        순수하게 선행선택자만 있을때 사용하고
+      선행선택자:nth-of-type() 은 선행선택자들만 개수로 포함한다
+        다른 요소들이 포함되어 있을때 사용한다.
+      */
+      section.detail > div:nth-child(3) {
+        background-color: yellow;
+      }
+      section.detail > div:nth-of-type(3) {
+        background-color: green;
+      }
+      /* section.detail > div:nth-last-child() {
+      }
+
+      section.detail > div:nth-last-of-type() {
+      } */
+
+      section.detail > div {
+        display: flex;
+      }
+
+      section.detail > div ul {
+        list-style: circle;
+      }
+      p.comment {
+        margin: 5px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="detail">
+      <div>
+        <div><img src="./images/0001.jpg" width="200px" /></div>
+        <div>
+          <ul>
+            <li><strong>이름 : </strong><span>몽</span></li>
+            <li><strong>품종 : </strong><span>스피츠</span></li>
+            <li><strong>생년 : </strong><span>2017년</span></li>
+            <li><strong>입양 : </strong><span>2018년</span></li>
+          </ul>
+          <p class="comment"><span>스피츠(영어: Spitz)</span>는 개의 한 품종으로, 길이가 길고 통통하며 흰 털을 지닌 경우가 많고, 귀와 주둥이가 뾰족한 것이 특징이다. 꼬리는 보통 등 뒤로 굽어 있다.</p>
+        </div>
+      </div>
+      <div>
+        <div>Welcome</div>
+        <div>Welcome</div>
+      </div>
+      <div>
+        <div>Welcome</div>
+        <div>Welcome</div>
+      </div>
+    </section>
+  </body>
+</html>

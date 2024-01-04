@@ -71,6 +71,7 @@ section.img_container {
   background-image: url("../images/bg1.png");
   /* 바탕그림을 반복하여 채워라 */
   background-repeat: repeat;
+  justify-content: center;
 }
 
 section.img_container article {
