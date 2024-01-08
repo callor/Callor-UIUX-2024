@@ -17,7 +17,7 @@ body {
 }
 
 header {
-  background-color: #40ef40;
+  background-color: #5b5c9c;
   text-align: center;
   /*
   화면에 표현되는 단위
@@ -139,8 +139,8 @@ nav li:nth-of-type(5) {
 }
 
 footer {
-  background-color: blue;
-  color: white;
+  background-color: rgb(160, 160, 170);
+  color: black;
   text-align: center;
   padding: 0.7rem;
 }

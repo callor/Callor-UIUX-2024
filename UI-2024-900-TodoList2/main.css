@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100vh;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: rgb(160, 181, 224);
+  background: radial-gradient(circle, rgba(160, 181, 224, 1) 0%, rgba(6, 166, 86, 1) 100%);
+  padding: 1.3rem;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+section {
+  width: 70%;
+  margin: 5px auto;
+  border: 5px solid #ddd;
+}
+
+section.input {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+section.input input {
+  flex: 1;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+section.input input:hover {
+  background-color: #eee;
+}
+
+section.input input:focus {
+  border: 1px solid #0b570b;
+}
+
+section.input button {
+  padding: 0 40px;
+  border: none;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+section.list {
+  flex: 1;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-top: 0px;
+}
+
+section.list ul {
+  list-style: none;
+}
+
+section.list li {
+  cursor: pointer;
+  background-color: #eee;
+  font-size: 1.2rem;
+
+  /* Brwoser 호환성 위한 설정 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  padding: 0.9rem;
+
+  transform: 0.3s;
+
+  display: flex;
+}
+
+section.list li:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+section.list li:hover {
+  background-color: #ddd;
+}
+
+section.list li.complete {
+  background-color: #ccc;
+}
+
+section.list li.complete span.todo {
+  text-decoration: line-through;
+  color: #ddd;
+}
+/*
+  li tag 에 complete class 가 없으면
+  span.complete 에 속성 적용하기
+  */
+section.list li:not(.complete) span.complete {
+  visibility: hidden;
+}
+
+span.complete {
+  margin: 0 15px;
+  color: red;
+}
+span.todo {
+  flex: 1;
+}
+
+span.close {
+  transition: 0.7s;
+  padding: 0 5px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+span.close:hover {
+  background-color: #7bde7b;
+}
+
+footer {
+  background-color: #ccc;
+  padding: 0.8rem;
+  text-align: center;
+}
