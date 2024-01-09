@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      const url = new URL(window.location.href);
+      console.log(url);
+      const searchParams = url.searchParams;
+      console.log(urlParams);
+      const myParam = searchParams.get("name");
+    </script>
+
+    <script>
+      console.log(location.search);
+      const urlParams = location.search
+        .split(/[?&]/)
+        .slice(1)
+        .map(function (paramPair) {
+          return paramPair.split(/=(.+)?/).slice(0, 2);
+        })
+        .reduce(function (obj, pairArray) {
+          obj[pairArray[0]] = pairArray[1];
+          return obj;
+        }, {});
+
+      const username = urlParams.username;
+      const password = urlParams.password;
+      alert(`${username} \n${password}`);
+    </script>
+  </body>
+</html>
