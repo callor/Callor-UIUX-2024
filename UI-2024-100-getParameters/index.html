@@ -7,18 +7,25 @@
   </head>
   <body>
     <script>
-      function getParameter(name) {
+      const getParameter = (name) => {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
           results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-      }
+        return results || decodeURIComponent(results[1].replace(/\+/g, " "));
+      };
 
+      var username = getParameter("username");
+      var password = getParameter("password");
+
+      console.log(`username : ${username}`);
+      console.log(`password : ${password}`);
+    </script>
+
+    <script>
       const url = new URL(window.location.href);
-      console.log(url);
       const searchParams = url.searchParams;
-      console.log(urlParams);
-      const myParam = searchParams.get("name");
+      const myParam = searchParams.get("username");
+      console.log(`username : ${myParam}`);
     </script>
 
     <script>
@@ -33,10 +40,7 @@
           obj[pairArray[0]] = pairArray[1];
           return obj;
         }, {});
-
-      const username = urlParams.username;
-      const password = urlParams.password;
-      alert(`${username} \n${password}`);
+      console.log(`username: ${urlParams.username} \npassword : ${urlParams.password}`);
     </script>
   </body>
 </html>
