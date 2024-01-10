@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>이미지 겔러리</title>
+    <link rel="stylesheet" href="./css/main3.css" />
+    <script src="./js/image3.js"></script>
+    <style>
+      div.image_ticker {
+        width: 400px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      @keyframes image_slide {
+        0% {
+          trnasform: translateX(0);
+        }
+        100% {
+          /* div.image_list 의 width * (-1) */
+          transform: translateX(-800px);
+        }
+      }
+      div.image_list {
+        animation: image_slide 6s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>이미지 겔러리</h1>
+    </header>
+    <section class="main">
+      <article class="image_container">
+        <div class="image_view">
+          <img src="./images/01.jpg" />
+        </div>
+        <div>
+          <div class="image_ticker">
+            <div class="image_list">
+              <img src="./images/01.jpg" />
+              <img src="./images/02.jpg" />
+              <img src="./images/03.jpg" />
+              <img src="./images/04.jpg" />
+              <img src="./images/05.jpg" />
+              <img src="./images/06.jpg" />
+              <img src="./images/07.jpg" />
+              <img src="./images/08.jpg" />
+
+              <img src="./images/01.jpg" />
+              <img src="./images/02.jpg" />
+              <img src="./images/03.jpg" />
+              <img src="./images/04.jpg" />
+              <img src="./images/05.jpg" />
+              <img src="./images/06.jpg" />
+              <img src="./images/07.jpg" />
+              <img src="./images/08.jpg" />
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer>
+      <address>CopyRight &copy; callor@callor.com</address>
+    </footer>
+  </body>
+</html>
