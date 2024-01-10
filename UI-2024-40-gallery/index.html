@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body>
+    <div class="img_list"></div>
+  </body>
+  <script>
+    const img_list = document.querySelector(".img_list");
+    for (let i = 0; i < 6; i++) {
+      const img = document.createElement("img");
+      img.src = `./images/000${i + 1}.jpg`;
+      img.alt = "이미지";
+      img.width = 200;
+      img_list.appendChild(img);
+    }
+  </script>
+</html>
