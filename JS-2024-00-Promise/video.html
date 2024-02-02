@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+  </body>
+</html>
+
+<script>
+  // video chating
+  function handleCallButton(evt) {
+    setStatusMessage("Calling...");
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: true })
+      .then((chatStream) => {
+        selfViewElem.srcObject = chatStream;
+        chatStream.getTracks().forEach((track) => myPeerConnection.addTrack(track, chatStream));
+        setStatusMessage("Connected");
+      })
+      .catch((err) => {
+        setStatusMessage("Failed to connect");
+      });
+  }
+
+  function imageFetch() {
+    const img_list = document.querySelector(".img_list");
+    for (let i = 0; i < 6; i++) {
+      const img = document.createElement("img");
+      img.src = `./images/000${i + 1}.jpg`;
+      img.alt = "이미지";
+      img.width = 200;
+      img_list.appendChild(img);
+    }
+  }
+
+  function imageFetch2() {
+    fetch("coffee.jpg")
+      .then((response) => response.blob())
+      .then((myBlob) => {
+        let objectURL = URL.createObjectURL(myBlob);
+        let image = document.createElement("img");
+        image.src = objectURL;
+        document.body.appendChild(image);
+      })
+      .catch((e) => {
+        console.log("There has been a problem with your fetch operation: " + e.message);
+      });
+  }
+
+  function fetchAndDecode(url, type) {
+    return fetch(url)
+      .then((response) => {
+        if (type === "blob") {
+          return response.blob();
+        } else if (type === "text") {
+          return response.text();
+        }
+      })
+      .catch((e) => {
+        console.log("There has been a problem with your fetch operation: " + e.message);
+      });
+  }
+</script>
