@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        font-size: 4vmin;
+        font-family: sans-serif;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .puzzle .word {
+        display: flex;
+      }
+
+      .puzzle .word .letter {
+        width: 2em;
+        height: 2em;
+        margin: 0.05em;
+        background-color: #555;
+        color: white;
+        text-align: center;
+        user-select: none;
+        position: relative;
+        order: 2;
+        right: 50%;
+      }
+
+      .puzzle .word .letter:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+
+      .puzzle .word .letter:last-child {
+        margin-right: auto;
+      }
+
+      .puzzle .word .pivot {
+        background-color: #75a987;
+      }
+
+      .puzzle .word .pivot,
+      .puzzle .word .pivot ~ .letter {
+        order: 1;
+        left: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="puzzle">
+      <div class="word">
+        <span class="letter">i</span>
+        <span class="letter">n</span>
+        <span class="letter">d</span>
+        <span class="letter">i</span>
+        <span class="letter pivot">g</span>
+        <span class="letter">o</span>
+      </div>
+      <div class="word">
+        <span class="letter">c</span>
+        <span class="letter">e</span>
+        <span class="letter pivot">r</span>
+        <span class="letter">u</span>
+        <span class="letter">l</span>
+        <span class="letter">e</span>
+        <span class="letter">a</span>
+        <span class="letter">n</span>
+      </div>
+      <div class="word">
+        <span class="letter">s</span>
+        <span class="letter">i</span>
+        <span class="letter">l</span>
+        <span class="letter">v</span>
+        <span class="letter pivot">e</span>
+        <span class="letter">r</span>
+      </div>
+      <div class="word">
+        <span class="letter pivot">e</span>
+        <span class="letter">b</span>
+        <span class="letter">o</span>
+        <span class="letter">n</span>
+        <span class="letter">y</span>
+      </div>
+      <div class="word">
+        <span class="letter">o</span>
+        <span class="letter">r</span>
+        <span class="letter">a</span>
+        <span class="letter pivot">n</span>
+        <span class="letter">g</span>
+        <span class="letter">e</span>
+      </div>
+    </div>
+  </body>
+</html>

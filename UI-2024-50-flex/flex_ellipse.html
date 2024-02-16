@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      .filename {
+        display: flex;
+        min-width: 0;
+      }
+
+      .filename__base {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .filename__extension {
+        flex-shrink: 0;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        max-width: 470px;
+        margin: 0 50px;
+        font-size: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="filename">
+      <span class="filename__base">this-file-has-a-really-really-really-long-filename.</span>
+      <span class="filename__extension">pdf</span>
+    </div>
+  </body>
+</html>
