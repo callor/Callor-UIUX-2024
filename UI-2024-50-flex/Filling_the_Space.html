@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      #parent {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .child {
+        height: 50px;
+        background: red;
+        flex: 1;
+        min-width: 25%;
+        border: 5px solid white;
+      }
+
+      @media (max-width: 700px) {
+        .child {
+          min-width: 33.33%;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .child {
+          min-width: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button id="add">Add Child</button>
+
+    <div id="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </body>
+  <script>
+    document.querySelector("#add").addEventListener("click", function () {
+      document.querySelector("#parent").innerHTML += "<div class='child'></div>";
+    });
+  </script>
+</html>

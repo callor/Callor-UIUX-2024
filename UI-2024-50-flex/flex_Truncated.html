@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .flex-parent {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin: 30px 0;
+      }
+
+      h2 {
+        font-size: 1rem;
+        font-weight: normal;
+      }
+
+      .long-and-truncated {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .short-and-fixed {
+        white-space: nowrap;
+      }
+      .short-and-fixed > div {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        background: lightgreen;
+        display: inline-block;
+      }
+
+      .long-and-truncated-with-child {
+        flex: 1;
+      }
+      .long-and-truncated-with-child h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .long-and-truncated-with-child-corrected {
+        flex: 1;
+        min-width: 0;
+        /* or some value */
+      }
+      .long-and-truncated-with-child-corrected h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      body {
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-parent">
+      <div class="flex-child long-and-truncated">1. This is a long string that is OK to truncate please and thank you</div>
+
+      <div class="flex-child short-and-fixed">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="flex-parent has-child">
+      <div class="flex-child long-and-truncated-with-child">
+        <h2>2. This is a long string that is OK to truncate please and thank you</h2>
+      </div>
+
+      <div class="flex-child short-and-fixed">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="flex-parent has-child">
+      <div class="flex-child long-and-truncated-with-child-corrected">
+        <h2>3. This is a long string that is OK to truncate please and thank you</h2>
+      </div>
+
+      <div class="flex-child short-and-fixed">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
