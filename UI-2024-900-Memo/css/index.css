@@ -58,3 +58,15 @@ form.input {
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  section.main {
+    flex-direction: column;
+  }
+
+  div.aside {
+    &:nth-of-type(1) {
+      border-right: none;
+    }
+  }
+}
