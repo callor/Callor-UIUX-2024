@@ -16,7 +16,6 @@
 | ""           | String    | 비어있는 string 값, also '' 및 ``도 포함합니다..                                                                            |
 | document.all | Object    | JavaScript의 유일한 거짓 같은 객체는 내장 document.all입니다.                                                               |
 
-- `undefined`, `null`, `false`, `NaN`, `숫자 0`, `숫자 -0` `On`, `""`
 - `const name = ""` : `name` 변수에 담긴 값이 `falsy` 가 된다
 
 ## falsy 를 활용한 코드 예제
