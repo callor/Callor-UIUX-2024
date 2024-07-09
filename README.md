@@ -15,7 +15,6 @@
 
 - 검색 창에 `Korea` 입력 : `Korea Lan. Pack` 설치
 
-![alt text](./images/image-3.png)
 ![alt text](./images/image-4.png)
 
 - 검색창에 `prettier` 입력 : `Prettier - Code formatter` 설치
