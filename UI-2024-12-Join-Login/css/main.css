@@ -1,0 +1,41 @@
+header.main {
+  display: flex;
+  color: white;
+  /* 이미지를 배경으로 설정하기 */
+  background-image: url("../../images/title.png");
+  /* 
+    이미지가 box 보다 작을경우 반복출력(repeat), 
+    또는 그렇지 않기 (no-repeat) : 
+        이미지가 작을경우 box 전체에 이미지가 입혀지지 않는다
+    */
+  background-repeat: no-repeat;
+  /* 이미지의 중심과 그려질 box 의 중심을 일치하기 */
+  background-position: cneter;
+  background-size: 100% 100%;
+}
+header.main div {
+  padding: 1.2rem;
+}
+header.main div:nth-of-type(1) {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+header.main div:nth-of-type(2) {
+  flex: 3;
+  text-align: center;
+}
+header.main div:nth-of-type(3) {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+header.main a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+header.main img {
+  border-radius: 50%;
+}

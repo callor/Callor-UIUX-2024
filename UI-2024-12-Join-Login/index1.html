@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 200px;
+        height: 100px;
+        border: 3px solid blue;
+        transition: 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">안녕하세요</div>
+    <div id="div2">반갑습니다</div>
+    <div id="div3">Republic of Korea</div>
+  </body>
+  <script>
+    const div1 = document.querySelector("div#div1");
+    const div2 = document.querySelector("div#div2");
+    const div3 = document.querySelector("div#div3");
+    let count = 0;
+    // 어딘가에 onClick Event 가 발생하면 처리할(Hander) 함수 선언
+    const onClickHandler = (e) => {
+      count++;
+      let deg = count * 90;
+      // back tit 을 이용한 문자열과 변수 결합
+      e.target.style.transform = `rotate(${deg}deg)`;
+    };
+    div1.addEventListener("click", onClickHandler);
+    div2.addEventListener("click", onClickHandler);
+    div3.addEventListener("click", onClickHandler);
+  </script>
+</html>

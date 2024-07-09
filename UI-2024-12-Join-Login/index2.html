@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/clear.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div.div.hello {
+        width: 200px;
+        height: 100px;
+        border: 3px solid green;
+        text-align: center;
+        transition: 1s step-end;
+      }
+    </style>
+    <script>
+      /*
+        화면(HTML)의 객체 도구(DOM)를 JS 코드에서 사용하려고 할때는
+        querySelector() 함수를 사용하여 Selector 객체를 Query 하여 변수에 저장해 두어야 한다
+        하지만, 화면에 DOM 이 그려지기 전에 JS 코드가 실행되면, 아직 준비안된 객체를 참조하고
+        JS 코드에서 오류가 발생한다.
+        그러한 현상을 방지하기 위하여 JS 코드에서는 항상 다음의 스크립트코드로
+        시작한다.
+        화면에 모든 요소가 다 그려지면 JS 코드를 실행해라 라는 의미
+        */
+      document.addEventListener("DOMContentLoaded", () => {
+        const hello_div = document.querySelector("div.hello");
+        // 3가지 문자열 요소를 포함하는 문자열 배열 선언과 값 할당
+        const hellos = [
+          "안녕하세요",
+          "우리나라만세",
+          "Republic of korea",
+          "대한민국 우리나라",
+          "지금은 장마철",
+        ];
+        let count = 0;
+        hello_div.addEventListener("click", (e) => {
+          e.target.innerHTML = hellos[count++ % hellos.length];
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="div hello">KOREA</div>
+  </body>
+</html>
