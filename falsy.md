@@ -4,8 +4,8 @@
 
 ### 다음은 JavaScript의 거짓 같은 값들입니다.
 
-+----+----+-----------------------+
 |값 |타입| 설명|
+|----+----+-----------------------|
 |null| Null| null 키워드는 아무런 값도 없음을 의미합니다.|
 |undefined| Undefined| undefined는 원시값을 의미합니다.|
 |false| Boolean| false 키워드.|
@@ -15,7 +15,7 @@
 |0n| BigInt| The BigInt 0, 0x0n 등도 포함합니다. Note that there is no BigInt에 음수 0가 없다는 것에 주목하세요. 0n의 음수 |0은 0n입니다.|
 |""| String| 비어있는 string 값, also '' 및 ``도 포함합니다..|
 |document.all| Object| JavaScript의 유일한 거짓 같은 객체는 내장 document.all입니다.|
-+----+----+-----------------------+
+|----+----+-----------------------|
 
 - `undefined`, `null`, `false`, `NaN`, `숫자 0`, `숫자 -0` `On`, `""`
 - `const name = ""` : `name` 변수에 담긴 값이 `falsy` 가 된다
