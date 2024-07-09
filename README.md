@@ -10,7 +10,7 @@
 
 ## vsCode 플러그인 설치하기
 
-![alt text](image.png)
+![alt text](./images/image.png)
 ![alt text](./images/image-2.png)
 
 - 검색 창에 `Korea` 입력 : `Korea Lan. Pack` 설치
