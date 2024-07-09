@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>몽이네집</h1>
+      <p>몽이네집 홈페이지에 오신것을 환영합니다.</p>
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+    <section class="img_container">
+      <article>
+        <img src="./images/thums/600_0001.jpg" alt="인증사진" class="img_0001" />
+        <figcation>몽이인증</figcation>
+      </article>
+      <article>
+        <img src="./images/thums/600_0002.jpg" alt="스피츠" />
+        <figcation>스피츠 종</figcation>
+      </article>
+      <article>
+        <img src="./images/thums/600_0003.jpg" alt="바라보기" />
+        <figcation>바라보기</figcation>
+      </article>
+      <article>
+        <img src="./images/thums/600_0004.jpg" alt="눈치보기" />
+        <figcation>눈치보기</figcation>
+      </article>
+      <article>
+        <img src="./images/thums/600_0005.jpg" alt="놀아죠" />
+        <figcation>놀아죠</figcation>
+      </article>
+      <article>
+        <img src="./images/thums/600_0006.jpg" alt="첫 만남" />
+        <figcation>첫 만남</figcation>
+      </article>
+    </section>
+    <footer>
+      <address>CopyRight &copy; callor@callor.com</address>
+    </footer>
+  </body>
+  <script>
+    const importHTML = (tag, url) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.onreadystatechange = () => {
+        // In local files, status is 0 upon success in Mozilla Firefox
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          const status = xhr.status;
+          if (status === 0 || (status >= 200 && status < 400)) {
+            tag.innerHTML = xhr.responseText;
+          } else if (xhr.status == 404) {
+            tag.innerHTML = "Page not found.";
+          }
+        }
+      };
+      xhr.send();
+    };
+    const section_container = document.querySelector(".img_container");
+    // const img_0001 = document.querySelector(".img_0001");
+    // const img_0001_click_event = () => {
+    //   includeHTML(section_container, "./01.html");
+    // };
+    // img_0001.addEventListener("click", img_0001_click_event);
+
+    section_container.addEventListener("click", (e) => {
+      if (e.target.tagName !== "IMG") return;
+      const alt_text = e.target.getAttribute("alt");
+
+      let url = "./01.html";
+      if (alt_text === "인증사진") {
+        url = "./01.html";
+      } else if (alt_text === "스피츠") {
+        url = "./02.html";
+      } else if (alt_text === "바라보기") {
+        url = "./03.html";
+      } else if (alt_text === "눈치보기") {
+        url = "./04.html";
+      } else if (alt_text === "놀아죠") {
+        url = "./05.html";
+      } else if (alt_text === "첫 만남") {
+        url = "./06.html";
+      }
+      includeHTML(section_container, url);
+    });
+  </script>
+</html>
