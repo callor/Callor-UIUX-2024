@@ -69,6 +69,7 @@
 
     const importHTML = (tag, url) => {
       const xhr = new XMLHttpRequest();
+      console.log(url);
       xhr.open("GET", url, true);
       xhr.onreadystatechange = () => {
         // In local files, status is 0 upon success in Mozilla Firefox
@@ -94,19 +95,19 @@
       if (e.target.tagName !== "IMG") return;
       const alt_text = e.target.getAttribute("alt");
 
-      let url = "./01.html";
+      let url = "./dog_detail.html";
       if (alt_text === "인증사진") {
-        url = "./01.html";
+        url += "?image=0001";
       } else if (alt_text === "스피츠") {
-        url = "./02.html";
+        url += "?image=0002";
       } else if (alt_text === "바라보기") {
-        url = "./03.html";
+        url += "?image=0003";
       } else if (alt_text === "눈치보기") {
-        url = "./04.html";
+        url += "?image=0004";
       } else if (alt_text === "놀아죠") {
-        url = "./05.html";
+        url += "?image=0005";
       } else if (alt_text === "첫 만남") {
-        url = "./06.html";
+        url += "?image=0006";
       }
       importHTML(section_container, url);
     });

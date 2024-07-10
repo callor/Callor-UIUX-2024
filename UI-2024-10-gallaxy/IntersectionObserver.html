@@ -62,19 +62,18 @@
 
     const callback = (entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
+        console.log(entry.target.src, entry.intersectionRatio);
+        if (entry.intersectionRatio > 0 && entry.isIntersecting) {
           console.log(entry.target.src, "show");
           entry.target.classList.add("show");
-          // entry.target.style.opacity = 1;
         } else {
           entry.target.classList.remove("show");
           console.log(entry.target.src, "hidden");
-          // entry.target.style.opacity = 0;
         }
       });
     };
     // options에 따라 인스턴스 생성
-    let observer = new IntersectionObserver(callback, options);
+    const observer = new IntersectionObserver(callback, options);
 
     // 타겟 요소 관찰 시작
     let imgs = document.querySelectorAll("article img");
