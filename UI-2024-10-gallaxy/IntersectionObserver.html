@@ -57,13 +57,14 @@
       // root: document.querySelector("section.main"),
       // rootMargin: "10px",
       // 0.0 ~ 1.0
-      threshold: 0.3,
+      // threshold: 0.3,
     };
 
     const callback = (entries) => {
       entries.forEach((entry) => {
         console.log(entry.target.src, entry.intersectionRatio);
-        if (entry.intersectionRatio > 0 && entry.isIntersecting) {
+        // if (entry.intersectionRatio > 0 && entry.isIntersecting) {
+        if (entry.intersectionRatio > 0) {
           console.log(entry.target.src, "show");
           entry.target.classList.add("show");
         } else {
