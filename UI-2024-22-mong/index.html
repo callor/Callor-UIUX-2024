@@ -49,6 +49,24 @@
     </footer>
   </body>
   <script>
+    // const Request = (e) => {
+    // e.getParameter = (name) => {
+    const getParameter = (name) => {
+      let rtnval = "";
+      const nowAddress = unescape(location.href);
+      const parameters = nowAddress.slice(nowAddress.indexOf("?") + 1, nowAddress.length).split("&");
+      for (let i = 0; i < parameters.length; i++) {
+        const varName = parameters[i].split("=")[0];
+        if (varName.toUpperCase() == name.toUpperCase()) {
+          rtnval = parameters[i].split("=")[1];
+          break;
+        }
+      }
+      return rtnval;
+    };
+    const hello = getParameter("hello");
+    // alert(hello);
+
     const importHTML = (tag, url) => {
       const xhr = new XMLHttpRequest();
       xhr.open("GET", url, true);
@@ -90,7 +108,7 @@
       } else if (alt_text === "첫 만남") {
         url = "./06.html";
       }
-      includeHTML(section_container, url);
+      importHTML(section_container, url);
     });
   </script>
 </html>
