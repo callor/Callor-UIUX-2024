@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <style>
+      .filebox .upload-name {
+        height: 40px;
+        padding: 0 10px;
+        vertical-align: middle;
+        border: 1px solid #dddddd;
+        width: 78%;
+        color: #999999;
+      }
+      .filebox label {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        vertical-align: middle;
+        background-color: #999999;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      .filebox input[type="file"] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="filebox">
+        <input class="upload-name" placeholder="첨부파일" />
+        <label>파일찾기</label>
+        <input type="file" />
+      </div>
+      <div class="filebox">
+        <input class="upload-name" placeholder="첨부파일" />
+        <label>파일찾기</label>
+        <input type="file" />
+      </div>
+      <div class="filebox">
+        <input class="upload-name" placeholder="첨부파일" />
+        <label>파일찾기</label>
+        <input type="file" />
+      </div>
+    </form>
+  </body>
+  <script>
+    document.querySelectorAll("input[type='file']").forEach((input, index) => {
+      input.id = `file${index + 1}`;
+
+      input.closest(".filebox").querySelector("label").htmlFor = `file${index + 1}`;
+      input.closest(".filebox").querySelector("input.upload-name").value = `첨부파일 ${index + 1}`;
+      console.log(input);
+      input.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        const file_box = input.closest(".filebox");
+        file_box.querySelector(".upload-name").value = file.name;
+      });
+    });
+  </script>
+</html>
